@@ -129,8 +129,8 @@ namespace A2
         /// <param name="e"></param>
         private void textChangedGuess(object sender, EventArgs e)
         {
-            int temp; //useless for now; I don't need the number, just to try. I'm sure there's a better way.
-            if(!Int32.TryParse(tbGuess.Text, out temp)){
+            int temp; //The current number in the guess box. Actually not so useless now. 
+            if (!Int32.TryParse(tbGuess.Text, out temp)){
                 lblInputError.Visible = true;
                 inputError = true;
             } else
@@ -163,7 +163,7 @@ namespace A2
             refreshStats();
         }
         /// <summary>
-        /// The event responsible for rolling the die after being clicked..
+        /// The event responsible for rolling the die after being clicked.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -187,7 +187,8 @@ namespace A2
                         //roll a fake number
                         roll = tempRNG.Next(1, 7);
                     }
-                    //If the program did not error out earlier on trying to load pictures
+                    //If the program did not error out earlier on trying to load pictures.
+                    // Funnily enough, with no images the rolling is significantly faster!
                     if (hasImages)
                     {
                         //Changes the image and sleeps.
