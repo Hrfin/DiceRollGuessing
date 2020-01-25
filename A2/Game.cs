@@ -86,7 +86,7 @@ namespace A2
             {
                 gamesLost++;
             }
-            //incrementing the frequency and percent based on what was rolled. Found that no matter how I did this I'd
+            //incrementing the frequency and percent based on what was rolled. Found that no matter how I did I'd
             // end up using two switch statements, so I pulled them out of the if statement above.
             switch (roll)
             {
