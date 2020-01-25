@@ -92,27 +92,27 @@ namespace A2
             {
                 case 1:
                     dieOne.freq++;
-                    dieOne.perc = ((double)dieOne.freq / (double)gamesPlayed);
+                    refreshPercentages();
                     break;
                 case 2:
                     dieTwo.freq++;
-                    dieTwo.perc = ((double)dieTwo.freq / (double)gamesPlayed);
+                    refreshPercentages();
                     break;
                 case 3:
                     dieThree.freq++;
-                    dieThree.perc = ((double)dieThree.freq / (double)gamesPlayed);
+                    refreshPercentages();
                     break;
                 case 4:
                     dieFour.freq++;
-                    dieFour.perc = ((double)dieFour.freq / (double)gamesPlayed);
+                    refreshPercentages();
                     break;
                 case 5:
                     dieFive.freq++;
-                    dieFive.perc = ((double)dieFive.freq / (double)gamesPlayed);
+                    refreshPercentages();
                     break;
                 case 6:
                     dieSix.freq++;
-                    dieSix.perc = ((double)dieSix.freq / (double)gamesPlayed);
+                    refreshPercentages();
                     break;
                 default:
                     throw new Exception("Incorrect random number from playRound roll, expected 1-6, got " + roll);
@@ -142,6 +142,18 @@ namespace A2
                     break;
             }
             return roll;
+        }
+        /// <summary>
+        /// Method used for refreshing all of the die percentages each roll.
+        /// </summary>
+        private void refreshPercentages()
+        {
+            dieOne.perc = ((double)dieOne.freq / (double)gamesPlayed);
+            dieTwo.perc = ((double)dieTwo.freq / (double)gamesPlayed);
+            dieThree.perc = ((double)dieThree.freq / (double)gamesPlayed);
+            dieFour.perc = ((double)dieFour.freq / (double)gamesPlayed);
+            dieFive.perc = ((double)dieFive.freq / (double)gamesPlayed);
+            dieSix.perc = ((double)dieSix.freq / (double)gamesPlayed);
         }
         /// <summary>
         /// class used exclusively within game to hold the stats and information of each die face. Is accessed to print each row of the table.
